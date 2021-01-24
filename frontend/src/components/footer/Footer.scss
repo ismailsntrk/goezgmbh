@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap");
+#footer-cont {
+  background-color: brown;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 35vh;
+}
+
+
+#footer-item-one {
+    width: 100%;
+  height: 70%;
+  display: flex;
+  flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    p{
+        font-size: 130%;
+    }
+}
+
+#footer-item-two {
+  height: 20%;
+  p {
+    font-family: "Dancing Script", cursive;
+    font-size: 200%;
+  }
+}
+
+#footer-item-three {
+  height: 10%;
+}
+
+.footer-icons{
+    margin: 0 5% 0 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+@media screen and (max-width: 800px) {
+    #footer-cont {
+        align-items: center;
+        background-color: brown;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 55vh;
+      }
+      
+     
+      
+      #footer-item-one {
+          width: 100%;
+          
+        height: 58%;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+          font-size: 90%;
+          p{
+           
+              width: 100%;
+              font-size: 130%;
+          }
+      }
+      
+      #footer-item-two {
+          display: flex;
+          flex-direction: row;
+          text-align: center;
+          justify-content: center;
+          
+        height: 32%;
+        p {
+          font-family: "Dancing Script", cursive;
+          font-size: 200%;
+        }
+      }
+      
+      #footer-item-three {
+        height: 10%;
+      }
+      
+      .footer-icons{
+          margin: 0 5% 0 5%;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+      }
+
+}

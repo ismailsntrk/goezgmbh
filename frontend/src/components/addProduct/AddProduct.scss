@@ -1,0 +1,38 @@
+.add-product-main{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.adding-part{
+    min-width: 30%;
+    margin-bottom: 5%;
+    margin-top: 10%;
+}
+
+
+.listProduct{
+    width: 30%;
+    max-height: 60vh;
+    margin-bottom: 5%;
+    margin-top: 10%;
+    overflow:scroll;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+}
+
+.list-item-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#login{
+    min-height:70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

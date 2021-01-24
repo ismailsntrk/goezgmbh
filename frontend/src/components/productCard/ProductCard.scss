@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo&display=swap");
+
+#main-product-cont {
+  
+  height: 35vh;
+  margin-top: 10%;
+  background-color: #E9ECEF;
+  margin-bottom: 10%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5px;
+}
+
+#load{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#card-cont {
+  display: grid;
+  width: 100%;
+  opacity: 1;
+  grid-template-columns: 25% 25% 25% 25%;
+  transition: 0;
+  justify-items: center;
+}
+
+#main-product-cont:hover {
+  #product-img {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    z-index: 90;
+    background-color: #DEE2E6;
+    width: 130%;
+    height: 130%;
+    
+  }
+}
+
+.main-product-cont{
+  display: flex;
+  padding-top: 6vh;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.button.list{
+width: 30%;
+margin-top: 10vh;
+}
+
+.product-list{
+  width: 70%;
+}
+
+
+
+#part-one {
+
+  height: 30%;
+  width: 100%;
+  border-top: 1px solid lightgray;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    font-family: "Heebo", sans-serif;
+    margin-top: 10%;
+    width: 100%;
+    font-size: x-large;
+    text-align: center;
+  }
+}
+
+#button-grp {
+  width: 100%;
+  margin-top: 4%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#part-two {
+  height: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#product-img {
+  width: 100%;
+  height: 100%;
+  z-index: 64;
+  transition: 0.4s;
+}
+
+@media screen and (max-width: 800px) {
+  #part-one {
+    p {
+      font-size: 150%;
+    }
+  }
+
+  .main-product-cont{
+    display: flex;
+    
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #mobile-buttons {
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  
+.button.list{
+  width: 30%;
+  }
+  
+  .product-list{
+    width: 100%;
+  }
+  
+
+  #group-two {
+    margin-top: 5%;
+  }
+
+  #card-cont {
+    display: grid;
+    width: 100%;
+    opacity: 1;
+    grid-template-columns: 50% 50%;
+    transition: 0;
+    justify-items: center;
+  }
+
+  #main-product-cont:hover {
+    #product-img {
+      margin-top: 0;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    z-index: 90;
+    background-color: #DEE2E6;
+    width: 100%;
+    height: 100%;
+      
+    }
+  }
+
+  #part-two {
+    height: 60%;
+  }
+
+  #part-one {
+    height: 40%;
+  }
+}

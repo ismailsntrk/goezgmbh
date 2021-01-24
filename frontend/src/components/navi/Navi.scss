@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+#navbar {
+  font-family: "Roboto", sans-serif;
+  overflow: hidden;
+  padding: 30px 10px;
+  transition: 0.4s;
+  position: fixed;
+  width: 100%;
+  background-color: #faa307;
+  top: 0;
+  z-index: 99;
+  display: grid;
+  grid-template-columns: 10% 80% 10%;
+  justify-items: center;
+}
+
+.ism {
+  color: white;
+  float: left;
+  
+  margin-left: 1vw;
+  margin-right: 1vw;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 24px;
+  line-height: 25px;
+  transition: 0.5s;
+  margin-top: 20px;
+}
+
+#buttonNav{
+  font-size: 20px;
+  line-height: 12px;
+  padding: 0;
+}
+
+.navLink{
+  text-align: center;
+ text-decoration-line: none;
+  color: black;
+  p{
+    text-decoration-line: none;
+    font-size: x-large;
+    font-weight: bold;
+  }
+}
+
+
+
+.navLink:hover{
+  text-align: center;
+ text-decoration-line: none;
+  color: darkgray;
+  p{
+    text-decoration-line: none;
+    font-size: x-large;
+    font-weight: bold;
+  }
+}
+
+.ism2 {
+  color: white;
+  float: left;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 24px;
+  margin-left: 1vw;
+  margin-left: 1vw;
+  line-height: 25px;
+  border-radius: 4px;
+  transition: 0.5s;
+  margin-top: 20px;
+}
+
+/* Style the logo */
+#logo {
+  height: 5.5rem;
+  width: 12rem;
+  opacity: 1;
+  margin-top: 0;
+
+  transition: 0.4s;
+}
+
+.lang {
+  z-index: 9999;
+}
+
+/* Links on mouse-over */
+.ism:hover {
+  // border: 1px solid red;
+  color: red;
+}
+
+#drop-t {
+  background-color: #faa307;
+}
+
+#flag {
+  width: 25px;
+  transition: 0.5s;
+}
+
+/* Style the active/current link */
+.ism.active {
+  background-color: dodgerblue;
+  color: white;
+}
+
+/* Display some links to the right */
+#navbar-right {
+  float: right;
+  margin-left: 20vw;
+  right: 0;
+}
+
+#lang {
+  float: right;
+  background-color: yellowgreen;
+  width: 100%;
+}
+
+/* Add responsiveness - on screens less than 800px wide, display the navbar vertically instead of horizontally */
+@media screen and (max-width: 800px) {
+
+  #navbar {
+    font-family: "Roboto", sans-serif;
+  overflow: hidden;
+  padding: 30px 10px;
+  transition: 0.4s;
+  position: fixed;
+  width: 100%;
+  background-color: #faa307;
+  top: 0;
+  z-index: 99;
+  display: unset; 
+  }
+
+
+
+
+  #logo {
+    height: 4rem;
+    width: 10rem;
+    opacity: 1;
+    margin-top: 0;
+    transition: 0.4s;
+  }
+
+
+
+
+}

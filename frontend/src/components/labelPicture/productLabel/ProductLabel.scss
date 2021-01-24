@@ -1,0 +1,90 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+#label-pic{
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    
+}
+
+#page-tag{
+    text-align: left;
+    color: white;
+
+    @media screen and (max-width: 800px) {
+    
+        #label-pic{
+            width: 100%;
+            height: 30vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: left;
+            
+        }
+    
+        #page-tag{
+            
+            margin-top: 20%;
+            color: white;
+        }
+    }
+    
+    
+    margin-top: 6%;
+    margin-left: 10%;
+    width: 80%;
+
+    hr{
+        border: 0.2rem solid red;
+    }
+   
+}
+
+#contact-us-p{
+    font-family: 'Roboto', sans-serif;
+    font-size: 3em;
+}
+
+
+
+#contact-us-hr{
+    width: 5%;
+    color: aqua;
+}
+
+@media screen and (max-width: 800px) {
+
+    #label-pic{
+        width: 100%;
+        height: 45vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+
+        hr{
+            visibility: hidden;
+        }
+        
+        
+        p{
+        
+            text-align: left;
+        }
+        
+    }
+
+    #page-tag{
+        
+        margin-top: 30%;
+        color: white;
+    }
+
+    #label-par{
+        visibility: hidden;
+    }
+
+
+}

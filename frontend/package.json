@@ -1,0 +1,57 @@
+{
+  "name": "fruits",
+  "homepage": "http://goezgmbh.com/",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.11.2",
+    "@material-ui/icons": "^4.11.2",
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.2.2",
+    "@testing-library/user-event": "^12.5.0",
+    "bootstrap": "^4.5.3",
+    "mapbox-gl": "^1.13.0",
+    "node-sass": "^4.14.1",
+    "react": "^17.0.1",
+    "react-animated-slider": "^2.0.0",
+    "react-dom": "^17.0.1",
+    "react-google-recaptcha": "^2.1.0",
+    "react-mapbox-gl": "^5.1.1",
+    "react-responsive-carousel": "^3.2.11",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^4.0.1",
+    "reactstrap": "^8.8.1",
+    "scss": "^0.2.4",
+    "web-vitals": "^0.2.4",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "proxy": "https://lit-reef-84408.herokuapp.com/",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "ie 11",
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devServer": {
+    "historyApiFallback": true
+}
+}
