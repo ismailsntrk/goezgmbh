@@ -46,19 +46,15 @@ const Contact = () => {
             {dictionary.address}
           </div>
           <div className="cont-div">
-            <a href="tel:+4733378901"><PhoneIcon></PhoneIcon>
+            <a href="tel:0202 574 90025"><PhoneIcon></PhoneIcon>
             {dictionary.phoneNumber}</a>
           </div>
           <div className="cont-div">
-            <a href="tel:+4733378901"><PhoneIcon></PhoneIcon>
-            {dictionary.phoneNumber2} </a>
+            <p ><PrintIcon></PrintIcon>
+            {dictionary.fax} </p>
           </div>
           <div className="cont-div">
-            <a href="tel:+4733378901"><PrintIcon></PrintIcon>
-            {dictionary.fax} </a>
-          </div>
-          <div className="cont-div">
-            <a href="mailto:goezgmbh@outlook.com"> <MailOutlineIcon></MailOutlineIcon> {dictionary.mail}</a>
+            <a href="mailto:goezgmbh@outlook.com"> <MailOutlineIcon></MailOutlineIcon> info@goez-gmbh.de</a>
             
           </div>
           <div className="cont-div">

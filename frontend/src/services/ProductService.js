@@ -1,17 +1,17 @@
 const ProductService = {
   getProducts: () => {
-    return fetch("/product/get", {
+    return fetch("https://lit-reef-84408.herokuapp.com/product/get", {
       method: "get",
       headers: {
         "Content-Type": "application/json",
       },
     })
       .then((res) => res.json())
-      .then((data) => console.log(data.status));
+      .then((data) => data);
   },
 
   addProduct: (product) => {
-    return fetch("/product/new", {
+    return fetch("https://lit-reef-84408.herokuapp.com/product/new", {
       method: "post",
       body: JSON.stringify(product),
       headers: {
@@ -23,7 +23,7 @@ const ProductService = {
   },
 
   newMessage: (msg) => {
-    return fetch("/product/message", {
+    return fetch("https://lit-reef-84408.herokuapp.com/product/message", {
       method: "post",
       body: JSON.stringify(msg),
       headers: {
@@ -36,7 +36,7 @@ const ProductService = {
 
   deleteProduct : (id) =>{
 
-    return fetch(`/product/delete/${id}`,{
+    return fetch(`https://lit-reef-84408.herokuapp.com/product/delete/${id}`,{
         method: 'delete',
         headers: {
             'Content-Type' : 'application/json'

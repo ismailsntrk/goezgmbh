@@ -1,28 +1,39 @@
-import React, { useState, useContext } from "react";
+import React, { useState , useEffect } from "react";
 import { Container } from "reactstrap";
 import { useHistory } from "react-router-dom";
-import { AuthContext } from "../../../services/AuthContext";
 import AuthService from "../../../services/AuthService";
-
+import Cookies from "universal-cookie";
 
 const Signup = () => {
   const [usera, setUsera] = useState({ username: "", password: "" });
-  const authContext = useContext(AuthContext);
   const history = useHistory();
+  const [logged, setLogged] = useState(false);
+
   const onChange = (e) => {
     e.preventDefault();
     setUsera({ ...usera, [e.target.name]: e.target.value });
   };
 
+  useEffect(() => {
+    const cookies = new Cookies();
+    const token = cookies.get("access_token");
+    if (token) {
+      AuthService.isAuthenticated(token).then((data) =>
+        data.isAuthenticated === true ? setLogged(true) : setLogged(false)
+      );
+    }
+  }, []);
+
   const onSubmit = (e) => {
     e.preventDefault();
     
     AuthService.login(usera).then((data) => {
-      const { isAuthenticated, user } = data;
-      if (isAuthenticated === true) {
-        authContext.setUser(user);
-        authContext.setIsAuthenticated(isAuthenticated);
-        setTimeout(() => {
+      const {  user } = data;
+      if (logged === false) {
+        const lastUser = {name: user.name, email: user.email, role: user.role , isAuthenticated : true}
+        AuthService.login(lastUser)
+        alert("Giriş Yapıldı")
+       return setTimeout(() => {
     
           history.push('/')
          
@@ -40,7 +51,7 @@ const Signup = () => {
 
   return (
  <div>
-   {authContext.isAuthenticated ===false ? (   <Container>
+   {logged ===false ? (   <Container>
       <div style={{marginTop:"20%" ,marginBottom:"20%"}} className="modal-dialog">
         <div className="modal-content">
           <div className="modal-heading">

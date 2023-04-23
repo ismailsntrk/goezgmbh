@@ -1,7 +1,9 @@
-import React, { useContext  } from "react";
+import React, { useContext } from "react";
 import item1 from "../../assets/fruits.jpg";
 import item2 from "../../assets/vegetables.jpg";
 import item3 from "../../assets/salad.jpg";
+import item4 from "../../assets/steak2.jpg";
+
 import Slider from "react-animated-slider";
 import "react-animated-slider/build/horizontal.css";
 import "./Carousel.scss";
@@ -11,24 +13,33 @@ import { LanguageContext } from "../language/Language";
 const Carousel = () => {
   const { dictionary } = useContext(LanguageContext);
 
-
   const itemss = [
     {
-      itemik: item1,id:"1",
+      itemik: item1,
+      id: "1",
       baslik: dictionary.CarouselTitleOne,
       par: dictionary.CarouselTextOne,
       button: dictionary.CarouselTitleOne,
     },
     {
-      itemik: item2,id:"2",
+      itemik: item4,
+      id: "4",
+      baslik: dictionary.CarouselTitleFour,
+      par: dictionary.CarouselTextFour,
+      button: dictionary.CarouselTitleFour,
+    },
+    {
+      itemik: item2,
+      id: "2",
       baslik: dictionary.CarouselTitleTwo,
       par: dictionary.CarouselTextTwo,
       button: dictionary.CarouselTitleTwo,
     },
     {
-      itemik: item3,id:"3",
+      itemik: item3,
+      id: "3",
       baslik: dictionary.CarouselTitleThree,
-      par:dictionary.CarouselTextThree,
+      par: dictionary.CarouselTextThree,
       button: dictionary.CarouselTitleThree,
     },
   ];
@@ -36,33 +47,43 @@ const Carousel = () => {
   const itemsMobile = [
     {
       itemik: item1,
-      id:"1",
+      id: "1",
       baslik: dictionary.CarouselTitleOne,
       par: dictionary.MobileCarouselTextOne,
       button: dictionary.CarouselTitleOne,
     },
     {
+      itemik: item4,
+      id: "4",
+      baslik: dictionary.CarouselTitleFour,
+      par: dictionary.CarouselTextFour,
+      button: dictionary.CarouselTitleFour,
+    },
+    {
       itemik: item2,
-      id:"2",
+      id: "2",
       baslik: dictionary.CarouselTitleTwo,
-      par:dictionary.MobileCarouselTextTwo,
+      par: dictionary.MobileCarouselTextTwo,
       button: dictionary.CarouselTitleTwo,
     },
     {
       itemik: item3,
-      id:"3",
+      id: "3",
       baslik: dictionary.CarouselTitleThree,
-      par:dictionary.MobileCarouselTextThree,
+      par: dictionary.MobileCarouselTextThree,
       button: dictionary.CarouselTitleThree,
-    }
+    },
   ];
 
-  
   return (
     <div>
       {window.innerWidth <= 800 ? (
         <div>
-          <Slider touchDisabled={true} className="slider-wrapper" autoplay={2500}>
+          <Slider
+            touchDisabled={true}
+            className="slider-wrapper"
+            autoplay={2500}
+          >
             {itemsMobile.map((item) => (
               <div
                 key={item.id}
@@ -87,7 +108,7 @@ const Carousel = () => {
           <Slider className="slider-wrapper" autoplay={2500}>
             {itemss.map((item) => (
               <div
-              key={item.id}
+                key={item.id}
                 className="slider-content"
                 style={{
                   background: `url(${item.itemik}) no-repeat center center`,

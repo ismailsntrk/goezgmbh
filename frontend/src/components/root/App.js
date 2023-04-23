@@ -11,7 +11,7 @@ import Navi from "../navi/Navi";
 import SignComplete from "../signFolders/SignComplete";
 import Signin from "../signFolders/signin/Signin";
 import AddProduct from "../addProduct/AddProduct";
-import AuthProvider from "../../services/AuthContext";
+
 const App = () => {
   return (
     <LanguageProvider>
@@ -22,12 +22,12 @@ const App = () => {
       
         <div style={{ height: "4rem" }}></div>
 
-        <AuthProvider>
           <Route path="/admin" exact component={Signin}></Route>
           <Route path="/add_product" exact component={AddProduct}></Route>
-          <Route path="/products" exact component={ProductPage}></Route>
-          </AuthProvider>
+         
+       
         <Switch>
+        <Route path="/products" exact component={ProductPage}></Route>
           <Route path="/" exact component={Dashboard}></Route>
           <Route
             path="/authentication/activate/:activationCode"

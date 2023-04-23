@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import ProductService from "../../services/ProductService";
 import {
   FormGroup,
@@ -9,17 +9,30 @@ import {
   Button,
   ListGroupItem,
 } from "reactstrap";
-import { AuthContext } from "../../services/AuthContext";
 import "./AddProduct.scss";
 import { Link, useHistory } from "react-router-dom";
 import AuthService from "../../services/AuthService";
+import imageCompression from "browser-image-compression";
+import Cookies from "universal-cookie";
+
 const AddProduct = () => {
-  const authContext = useContext(AuthContext);
+  const [logged, setLogged] = useState(false);
   const [loading, setLoading] = useState(true);
   const [products, setProducts] = useState([]);
   const [product, setProduct] = useState({});
   const history = useHistory();
   const [base64, setBase64] = useState();
+
+  useEffect(() => {
+    const cookies = new Cookies();
+    const token = cookies.get("access_token");
+    if (token) {
+      AuthService.isAuthenticated(token).then((data) =>
+        data.isAuthenticated === true ? setLogged(true) : setLogged(false)
+      );
+    }
+  }, []);
+
 
   useEffect(() => {
     if (loading) {
@@ -28,18 +41,17 @@ const AddProduct = () => {
     }
   }, [loading]);
 
-
-
-
   useEffect(() => {
-    setProduct( { ...product,imageStr: base64 });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    setProduct({ ...product, imageStr: base64 });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [base64]);
 
   const onChange = (e) => {
     e.preventDefault();
     setProduct({ ...product, [e.target.name]: e.target.value });
   };
+
+
 
   const onSubmit = (e) => {
     e.preventDefault();
@@ -59,15 +71,27 @@ const AddProduct = () => {
     setProduct({ ...product, gen: e.target.value });
   };
 
-  const changeFile = async (e) => {
-    e.preventDefault();
-    const file = e.target.files[0];
-    setBase64(await convertBase64(file));
-  };
-
   const deleteProduct = async (id) => {
     await ProductService.deleteProduct(id);
     window.location.reload(false);
+  };
+
+  const changeFile = async (e) => {
+    e.preventDefault();
+    const file = e.target.files[0];
+
+    const options = {
+      maxSizeMB: 1,
+      maxWidthOrHeight: 400,
+      useWebWorker: true,
+    };
+    try {
+      const compressedFile = await imageCompression(file, options);
+
+      setBase64(await convertBase64(compressedFile));
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const convertBase64 = (file) => {
@@ -87,8 +111,10 @@ const AddProduct = () => {
     });
   };
 
-  const logout = async () => {
-    await AuthService.logout();
+  const logout =  () => {
+    const cookies = new Cookies();
+    cookies.set("access_token" , "0" , new Date(Date.now() + 1 * 100), );
+     AuthService.logout();
     setTimeout(() => {
       history.push("/");
       window.location.reload(false);
@@ -97,7 +123,7 @@ const AddProduct = () => {
 
   return (
     <div>
-      {authContext.isAuthenticated === true ? (
+      {logged === true ? (
         <div className="add-product-main">
           <div className="adding-part">
             <div className="modal-content">
@@ -154,9 +180,9 @@ const AddProduct = () => {
                       </span>
                       <input
                         onChange={onChange}
-                        name="nameNL"
+                        name="nameSP"
                         className="form-control"
-                        placeholder="Ürün İsmi Felemenkçe"
+                        placeholder="Ürün İsmi İspanyolca"
                       />
                     </div>
                   </div>
@@ -167,9 +193,9 @@ const AddProduct = () => {
                       </span>
                       <input
                         onChange={onChange}
-                        name="nameSP"
+                        name="nameNL"
                         className="form-control"
-                        placeholder="Ürün İsmi İspanyolca"
+                        placeholder="Ürün İsmi Felemenkçe"
                       />
                     </div>
                   </div>
@@ -187,6 +213,8 @@ const AddProduct = () => {
                         <option value="sebze">Sebze</option>
                         <option value="ot">Yeşillik</option>
                         <option value="egzotik">Egzotik</option>
+                        <option value="bakliyat">Bakliyat</option>
+                        <option value="et">Et Ürünleri</option>
                         <option value="diger">Diğer</option>
                       </Input>
                     </FormGroup>

@@ -5,7 +5,7 @@ import DashSecTwo from "../dashSecTwo/DashSecTwo";
 
 const Dashboard = () => {
   return (
-    <div style={{ backgroundColor: "#F0F0F0" }}>
+    <div style={{ backgroundColor: "#F0F0F0"  }}>
       <div>
         <Carousel />
       </div>

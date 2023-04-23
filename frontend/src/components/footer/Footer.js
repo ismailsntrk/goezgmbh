@@ -17,11 +17,11 @@ const Footer = () => {
         </div>
         <div className="footer-icons"> 
           <PhoneIcon style={{ fontSize: "250%" }}></PhoneIcon>
-          <p>178 864 25 02</p>
+          <p>0202 574 90025</p>
         </div>
         <div className="footer-icons">
           <MailOutlineIcon style={{ fontSize: "250%" }}></MailOutlineIcon>
-          <p>goezgmbh@outlook.com</p>
+          <p>info@goez-gmbh.de</p>
         </div>
       </div>
       <div id="footer-item-two">
